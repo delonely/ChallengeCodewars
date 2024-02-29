@@ -41,4 +41,9 @@ function evenOrOdd(number) {
 
 console.log(evenOrOdd(-7));
 
+// Solution 3
+/*
+	let evenOrOdd = (number) => (number % 2 !== 0 ? "Odd" : "Even");
+	console.log(evenOrOdd(5));
+*/
 
