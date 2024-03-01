@@ -33,16 +33,18 @@ Test.assertEquals(multiply(-2),-10);
 5.using Math.pow function to raised it by 5
 */
 
-function multiply(number){
-    //your code here
+// function multiply(number){
+//     //your code here
     
-    if (number >= 0) {
-        return (Math.pow(5,(number.toString().length)) * number);
-    } else {
-        return (Math.pow(5,(number.toString().length)-1) * number);
-    }
+//     if (number >= 0) {
+//         return (Math.pow(5,(number.toString().length)) * number);
+//     } else {
+//         return (Math.pow(5,(number.toString().length)-1) * number);
+//     }
 
     
-  }
+//   }
 
- console.log(multiply(0)); 
+  let multiply = (number) => Math.pow(5, Math.abs(number).toString().length) * number;
+
+ console.log(multiply(20)); 
