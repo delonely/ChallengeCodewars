@@ -53,14 +53,37 @@ A:
 // }
 
 //SOLUTION 2
-function pillars(numPill, dist, width) {
-    const convertedDist = dist/0.01;
-    const pillarDistance = (convertedDist * (numPill - 1));
-    const pillarWidth = (width * (numPill - 2));
-    const totalDistance = pillarDistance + pillarWidth;
+// function pillars(numPill, dist, width) {
+//     const convertedDist = dist/0.01;
+//     const pillarDistance = (convertedDist * (numPill - 1));
+//     const pillarWidth = (width * (numPill - 2));
+//     const totalDistance = pillarDistance + pillarWidth;
 
-    return numPill === 1 ? dist = 0 : numPill === 2 ? convertedDist : totalDistance;
+//     return numPill === 1 ? dist = 0 : numPill === 2 ? convertedDist : totalDistance;
+// }
+
+// console.log(pillars(11,15,30));
+
+
+// Solution 3
+// Recursive, readable version
+function pillars(numPill, dist, width){
+    if (numPill <=1 ) return 0;
+
+    // this part is where we call recursive thingy
+    var value = pillars(numPill - 1, dist, width);
+    // this part is where we count pillar thingy
+    value += (dist / 0.01) + (numPill <= 2 ? 0 : width);
+
+    return value;
+    // simplified version
+    //var value = numPill <= 1 ? 0 : pillars(numPill - 1, dist, width) + (dist / 0.01) + (numPill <= 2 ? 0 :width);
+    //return value;
 }
 
-console.log(pillars(11,15,30));
+// Simplified solution 3
+// Recursive, but not readable
+//let pillars = (numPill, dist, width) => numPill <= 1 ? 0 : pillars(numPill - 1, dist, width) + (dist / 0.01) + (numPill <= 2 ? 0 :width);
+
+console.log(pillars(11, 15, 30));
 
