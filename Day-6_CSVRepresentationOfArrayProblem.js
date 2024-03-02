@@ -38,9 +38,11 @@ A:
 2.make the second for loop to loop the array length
 */
 
-function toCsvText(array) {
+// function toCsvText(array) {
     
-}
+// }
+
+let toCsvText = (array) => array.join("\\n");
 console.log(
     toCsvText([
     [ 0, 1, 2, 3, 45 ],

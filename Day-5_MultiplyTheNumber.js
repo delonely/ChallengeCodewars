@@ -47,4 +47,4 @@ Test.assertEquals(multiply(-2),-10);
 
   let multiply = (number) => Math.pow(5, Math.abs(number).toString().length) * number;
 
- console.log(multiply(20)); 
+ console.log(multiply(-3)); 
