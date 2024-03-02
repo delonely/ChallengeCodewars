@@ -39,7 +39,10 @@ A:
 */
 
 function toCsvText(array) {
-    
+    for (let i = 0; i < array.length; i++){ 
+        return array.join("\n");
+       
+    }
 }
 console.log(
     toCsvText([
