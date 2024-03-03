@@ -38,12 +38,24 @@ A:
 2.make the second for loop to loop the array length
 */
 
-function toCsvText(array) {
-    for (let i = 0; i < array.length; i++){ 
-        return array.join("\n");
+
+// function toCsvText(array) {
+//     for (let i = 0; i < array.length; i++){ 
+//         return array.join("\n");
        
+//     }
+// }
+
+// let toCsvText = (array) => array.join("\\n");
+
+function toCsvText(array){
+    let value = "";
+    for (member of array){
+        value += member + "\\n";
     }
+    return value;
 }
+
 console.log(
     toCsvText([
     [ 0, 1, 2, 3, 45 ],
