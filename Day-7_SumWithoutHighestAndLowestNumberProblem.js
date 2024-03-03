@@ -31,7 +31,7 @@ it("example tests", ()=>{
 function sumArray(array) {
 
   //1.if null/empty/nothing/none then return 0
-  if (array === null || array <= 2) return 0
+  if (array == null || array <= 2) return 0
   //2.initialization to count the total element
   let totalSum = 0;
   //3.sort the array
