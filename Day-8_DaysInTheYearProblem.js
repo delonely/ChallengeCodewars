@@ -54,5 +54,11 @@ A:
 
 // Ignore what is century years, since test case works with only leap years.
 
-let yearDays = (year) => year % 4 == 0 ? `${year} has 366 days` : `${year} has 365 days`;
-console.log(yearDays(-10))
+let yearDays = (year) => {
+    let pembagi = 4;
+    year/100 - Math.floor(year/100) === 0 ? pembagi = 400 : pembagi = 4; 
+    return year % pembagi == 0 ? `${year} has 366 days` : `${year} has 365 days`;
+}
+
+//year % 4 == 0 ? `${year} has 366 days` : `${year} has 365 days`;
+console.log(yearDays(1700))
