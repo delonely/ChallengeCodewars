@@ -28,21 +28,29 @@ it("example tests", ()=>{
 */
 
 
-function sumArray(array) {
+// function sumArray(array) {
 
-  //1.if null/empty/nothing/none then return 0
-  if (array == null || array <= 2) return 0
-  //2.initialization to count the total element
-  let totalSum = 0;
-  //3.sort the array
-  let sortedArray = array.sort((a, b) => a - b);
-  //4.looping the element of array, but skip the first element and the last element
-  for(i = 1; i < sortedArray.length - 1; i++){
-    totalSum += sortedArray[i];
-  }
-  return totalSum;
+//   //1.if null/empty/nothing/none then return 0
+//   if (array == null || array <= 2) return 0
+//   //2.initialization to count the total element
+//   let totalSum = 0;
+//   //3.sort the array
+//   let sortedArray = array.sort((a, b) => a - b);
+//   //4.looping the element of array, but skip the first element and the last element
+//   for(i = 1; i < sortedArray.length - 1; i++){
+//     totalSum += sortedArray[i];
+//   }
+//   return totalSum;
+// }
+
+function sumArray(array){
+  // If not array or length less than 2, return 0
+  if (! Array.isArray(array) || array.length <=2) return 0;
+  // Sort array then slice first and last part
+  let sortedArray = array.sort((a, b) => a - b).slice(1, -1);
+  // Sum array value
+  return sortedArray.reduce((currentValue, sum) => (currentValue + sum), 0);
 }
 
-
-console.log(sumArray([ ]));
+console.log(sumArray([ 0, 1, 6, 10, 10]));
 
