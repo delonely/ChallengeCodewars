@@ -29,18 +29,21 @@ Notes:
     assert.strictEqual(points(["1:0","2:0","3:0","4:4","2:2","3:3","1:4","2:3","2:4","3:4"]) , 12);
 */
 
-function points(games) {
-    let totalScore = 0;
-    for(i = 0; i < games.length; i++){
-        if(games[i][0] > games[i][2]){
-          totalScore += 3;
-        } else if (games[i][0] === games[i][2]){
-          totalScore += 1;
-        }
-    }
-    return totalScore;
-}
+// function points(games) {
+//     let totalScore = 0;
+//     for(i = 0; i < games.length; i++){
+//         if(games[i][0] > games[i][2]){
+//           totalScore += 3;
+//         } else if (games[i][0] === games[i][2]){
+//           totalScore += 1;
+//         }
+//     }
+//     return totalScore;
+// }
 
+let points = (games) => games.reduce((sum, currentValue)=> sum +  (currentValue[0] == currentValue.slice(-1) ? 1 : currentValue[0] > currentValue.slice(-1) ? 3 : 0) ,0);
   
- console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"])) 
+ console.log(points(["1:0","2:0","3:0","4:4","2:2","3:3","1:4","2:3","2:4","3:4"])) 
+ 
+ 
 
