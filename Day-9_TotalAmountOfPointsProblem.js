@@ -29,18 +29,40 @@ Notes:
     assert.strictEqual(points(["1:0","2:0","3:0","4:4","2:2","3:3","1:4","2:3","2:4","3:4"]) , 12);
 */
 
-function points(games) {
-    let totalScore = 0;
-    for(i = 0; i < games.length; i++){
-        if(games[i][0] > games[i][2]){
-          totalScore += 3;
-        } else if (games[i][0] === games[i][2]){
-          totalScore += 1;
-        }
-    }
-    return totalScore;
+// function points(games) {
+//     let totalScore = 0;
+//     for(i = 0; i < games.length; i++){
+//         if(games[i][0] > games[i][2]){
+//           totalScore += 3;
+//         } else if (games[i][0] === games[i][2]){
+//           totalScore += 1;
+//         }
+//     }
+//     return totalScore;
+// }
+
+// 1st Solution
+// Oneliner, yet unreadable since have 2 conditions in one line
+//let points = (games) => games.reduce((sum, currentValue)=> sum +  (currentValue[0] == currentValue.slice(-1) ? 1 : currentValue[0] > currentValue.slice(-1) ? 3 : 0) ,0);
+  
+
+// 2nd Solution
+// Two line, with score variable to save the score points
+// Need to think harder
+// let scores = [1, 3, 0];
+// let points = (games) => games.reduce((sum, currentValue) => sum + scores.at(Math.ceil((currentValue[0] - currentValue.slice(-1)) /currentValue[0])),0);
+
+// 3rd solution
+// multiple lines, but readable
+// +(scoreStatus > 0) means change the result from boolean to integer
+
+function points(games){
+    return games.reduce((sum, currentValue)=>{
+        let scoreStatus = currentValue[0] - currentValue.slice(-1);
+        if (scoreStatus < 0 ) return 0;
+        return sum + (+(scoreStatus > 0) * 2 + 1);
+    }, 0);
 }
 
-  
- console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"])) 
+console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"]));
 
