@@ -18,8 +18,10 @@ returns:
 Test.assertEquals(combineNames('James', 'Stevens'), 'James Stevens')
  */
 
-function combineNames(firstName, lastName) {
-  return (`${firstName}` + ' ' + `${lastName}`);
-}
+// function combineNames(firstName, lastName) {
+//   return (`${firstName}` + ' ' + `${lastName}`);
+// }
 
+// You used backticks, so you dont need to use plus (+) to join string anymore
+let combineNames = (firstName, lastName) => `${firstName} ${lastName}`;
 console.log(combineNames('James', 'Stevens'))
