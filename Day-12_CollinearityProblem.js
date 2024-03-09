@@ -36,15 +36,22 @@ Notes
 (0,0,1,0) ➞ true
 (5,7,0,0) ➞ true*/
 
-function collinearity(x1, y1,x2, y2) {
-   let totalX1X2 = x1 / x2;
-   let totalY1Y2 = y1 / y2;
+// function collinearity(x1, y1,x2, y2) {
+//    let totalX1X2 = x1 / x2;
+//    let totalY1Y2 = y1 / y2;
    
-   if((totalX1X2 === totalY1Y2) || (x1 === 0) && (x2 === 0) || (y1 === 0) && (y2 === 0) ){
-    return true
-   } else {
-    return false
-   }
+//    if((totalX1X2 === totalY1Y2) || (x1 === 0) && (x2 === 0) || (y1 === 0) && (y2 === 0) ){
+//     return true
+//    } else {
+//     return false
+//    }
+// }
+
+function collinearity(x1, y1, x2, y2){
+    let countX = x1 / x2;
+    let countY = y1 / y2;
+
+    return (countX === countY) || isNaN(countX) || isNaN(countY);
 }
 
 console.log(collinearity(1,1,1,1));  
