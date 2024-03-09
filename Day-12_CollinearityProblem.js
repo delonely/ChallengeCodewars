@@ -36,6 +36,8 @@ Notes
 (0,0,1,0) ➞ true
 (5,7,0,0) ➞ true*/
 
+//1st solution
+
 // function collinearity(x1, y1,x2, y2) {
 //    let totalX1X2 = x1 / x2;
 //    let totalY1Y2 = y1 / y2;
@@ -47,12 +49,19 @@ Notes
 //    }
 // }
 
-function collinearity(x1, y1, x2, y2){
-    let countX = x1 / x2;
-    let countY = y1 / y2;
+//2nd solution
+// function collinearity(x1, y1, x2, y2){
+//     let countX = x1 / x2;
+//     let countY = y1 / y2;
 
-    return (countX === countY) || isNaN(countX) || isNaN(countY);
+//     return (countX === countY) || isNaN(countX) || isNaN(countY);
+// }
+
+//3rd solution
+function collinearity(x1, y1, x2, y2){
+   return x1 * y2 === y1 * x2
 }
+
 
 console.log(collinearity(1,1,1,1));  
 console.log(collinearity(1,2,2,4));  
