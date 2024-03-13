@@ -19,20 +19,27 @@ Notes
     Switch the boolean value on the same element as the flick itself.
 */
 
+// function flickSwitch(arr){
+
+//   let flickSwitch = true;
+//   let newArr = [];
+
+//   for(let i = 0; i < arr.length; i++){
+//     if( arr[i] === "flick"){
+//         flickSwitch = !flickSwitch
+//         newArr.push(flickSwitch);
+//     } else {
+//         newArr.push(flickSwitch);
+//     }
+//   }
+//   return newArr
+// }
+
+// Solution 2 : Using array map
 function flickSwitch(arr){
-
   let flickSwitch = true;
-  let newArr = [];
-
-  for(let i = 0; i < arr.length; i++){
-    if( arr[i] === "flick"){
-        flickSwitch = !flickSwitch
-        newArr.push(flickSwitch);
-    } else {
-        newArr.push(flickSwitch);
-    }
-  }
-  return newArr
+  return arr.map((value) => flickSwitch = value == 'flick' ? !flickSwitch : flickSwitch);
 }
 
-  console.log(flickSwitch(['flick', 'chocolate', 'adventure', 'sunshine']));
+  //console.log(flickSwitch(['flick', 'chocolate', 'adventure', 'flick', 'sunshine']));
+  console.log(flickSwitch(['bicycle', 'jarmony', 'flick', 'sheep', 'flick']));
