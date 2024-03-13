@@ -32,13 +32,17 @@ Note: side will be an integer
 also return false for invalid number (<=0 || = 0)
 */
 
-function cubeChecker(volume, side){
-    if((volume <= 0 || side <= 0) || (volume != side ** 3)){
-        return false
-    } else {
-        return true
-    }
-  };
+// function cubeChecker(volume, side){
+//     if((volume <= 0 || side <= 0) || (volume != side ** 3)){
+//         return false
+//     } else {
+//         return true
+//     }
+//   };
+
+// Hanya check jika volume = side ^ 3
+// However, check jika side > 0, karena jika side <=0 bisa return true jika volume = 0, atau volume = side ^ 3 but result is minus
+let cubeChecker = (volume, side) => volume == side ** 3 && side > 0;
 
  console.log(cubeChecker(8,3))
  console.log(cubeChecker(8,2))
