@@ -51,6 +51,7 @@ const phrases = [
 ];
 
 const howMuchILoveYou = (nbPetals) => {
+  // reference : https://flexiple.com/javascript/get-last-array-element-javascript (with performance comparison)
   let index = (nbPetals % 6) - 1;
   return index < 0 ? phrases.pop() : phrases[index];
 }
