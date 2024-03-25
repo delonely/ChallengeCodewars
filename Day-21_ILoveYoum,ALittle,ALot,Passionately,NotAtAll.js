@@ -52,7 +52,7 @@ const phrases = [
 
 const howMuchILoveYou = (nbPetals) => {
   let index = (nbPetals % 6) - 1;
-  return index < 0 ? phrases.slice(-1)[0] : phrases[index];
+  return index < 0 ? phrases.pop() : phrases[index];
 }
 
 console.log(howMuchILoveYou(6));
