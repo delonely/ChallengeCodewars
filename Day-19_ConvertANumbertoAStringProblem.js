@@ -10,9 +10,11 @@ Examples (input --> output):
 -100 --> "-100"
 */
 
-function numberToString(num) {
-  return String(num);
-}
+// function numberToString(num) {
+//   return String(num);
+// }
+
+const numberToString = (num) => String(num);
 
 console.log(numberToString(123));
 console.log(numberToString(999));

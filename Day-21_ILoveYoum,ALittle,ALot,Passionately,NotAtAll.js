@@ -23,22 +23,37 @@ assert.strictEqual(howMuchILoveYou(7),"I love you")
     assert.strictEqual(howMuchILoveYou(6),"not at all")
  */
 
-function howMuchILoveYou(nbPetals) {
-  const phrases = [
-    "I love you",
-    "a little",
-    "a lot",
-    "passionately",
-    "madly",
-    "not at all",
-  ];
+// function howMuchILoveYou(nbPetals) {
+//   const phrases = [
+//     "I love you",
+//     "a little",
+//     "a lot",
+//     "passionately",
+//     "madly",
+//     "not at all",
+//   ];
 
+//   let index = (nbPetals % 6) - 1;
+
+//   if (index === -1) {
+//     index = phrases.length - 1;
+//   }
+//   return phrases[index];
+// }
+
+const phrases = [
+  "I love you",
+  "a little",
+  "a lot",
+  "passionately",
+  "madly",
+  "not at all",
+];
+
+const howMuchILoveYou = (nbPetals) => {
+  // reference : https://flexiple.com/javascript/get-last-array-element-javascript (with performance comparison)
   let index = (nbPetals % 6) - 1;
-
-  if (index === -1) {
-    index = phrases.length - 1;
-  }
-  return phrases[index];
+  return index < 0 ? phrases.pop() : phrases[index];
 }
 
 console.log(howMuchILoveYou(6));
