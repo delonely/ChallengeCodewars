@@ -32,19 +32,22 @@ Test.assertEquals(sum([1, 5.2, 4, 0, -1]), 9.2);
  */
 
 // Sum Numbers
-function sum(numbers) {
-  "use strict";
-  //1.check if the arrays are nulls/not
-  if (numbers === null) return 0;
-  //2.make a variable to store the sum total
-  let sumTotal = 0;
-  //3.loop through the arrays
-  for (let i = 0; i < numbers.length; i++) {
-    sumTotal += numbers[i];
-  }
-  return sumTotal;
-}
+// function sum(numbers) {
+//   "use strict";
+//   //1.check if the arrays are nulls/not
+//   if (numbers === null) return 0;
+//   //2.make a variable to store the sum total
+//   let sumTotal = 0;
+//   //3.loop through the arrays
+//   for (let i = 0; i < numbers.length; i++) {
+//     sumTotal += numbers[i];
+//   }
+//   return sumTotal;
+// }
 
+let sum = (numbers) => numbers == null ? 0 :numbers.reduce((total, currentValue) => total + currentValue ,0);
+
+console.log(sum(null));
 console.log(sum([]));
 console.log(sum([1, 5.2, 4, 0, -1])); //should be 9.2
 
