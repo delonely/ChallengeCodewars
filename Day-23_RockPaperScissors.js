@@ -37,20 +37,30 @@ Examples(Input1, Input2 --> Output):
 });
  */
 
-const rps = (p1, p2) => {
-  //using object only for win condition
-  const rpsRules = {
-    rock: "scissors",
-    scissors: "paper",
-    paper: "rock",
-  };
+// const rps = (p1, p2) => {
+//   //using object only for win condition
+//   const rpsRules = {
+//     rock: "scissors",
+//     scissors: "paper",
+//     paper: "rock",
+//   };
 
-  //if draw then return draw
-  if (p1 === p2) {
-    return "Draw!";
-  } else {
-    return `Player ${rpsRules[p1] === p2 ? "1" : "2"} won!`;
-  }
+//   //if draw then return draw
+//   if (p1 === p2) {
+//     return "Draw!";
+//   } else {
+//     return `Player ${rpsRules[p1] === p2 ? "1" : "2"} won!`;
+//   }
+// };
+
+//Put win condition on variable
+const rpsRules = {
+  rock: "scissors",
+  scissors: "paper",
+  paper: "rock",
 };
 
-console.log(rps("paper", "rock"));
+const rps = (p1, p2) => p1 === p2 ? "Draw" : `Player ${rpsRules[p1] === p2 ? "1" : "2"} won!`;
+
+
+console.log(rps("scissors", "rock"));
