@@ -8,7 +8,7 @@ function position(letter){
     //3.find the position of the alphabet
     const position = letterLowercase.charCodeAt() - charCode;
 
-    return `position in alphabet: ${position}`
+    return `Position of alphabet: ${position}`
 }
 
-console.log (position("z"))
+console.log (position("e"))
