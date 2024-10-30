@@ -16,9 +16,11 @@ Random input limits:
    5000≤Position≤50000
  */
 
-function duckDuckGoose(players, goose) {
-    return goose ? players[(goose - 1) % players.length].name : '';
-}
+// function duckDuckGoose(players, goose) {
+//     return goose ? players[(goose - 1) % players.length].name : '';
+// }
+
+let duckDuckGoose = (players, goose) => players[(goose-1) % players.length] ?? '';
 
 const players = [
     { name: "Jo" },
@@ -27,4 +29,4 @@ const players = [
     { name: "Rhisma" }
   ];
 
-console.log(duckDuckGoose(players,2))
+console.log(duckDuckGoose(players,0))
