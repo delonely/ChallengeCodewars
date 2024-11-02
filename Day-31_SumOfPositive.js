@@ -19,13 +19,15 @@ describe("Basic tests", () => {
   });
  */
 
-function positiveSum(arr) {
-    if (arr === null) return 0;
-    let sum = arr.reduce(function(total, currentValue){
-        return currentValue > 0 ? total + currentValue : total;
-    }, 0);
-    return sum;
-}
+// function positiveSum(arr) {
+//     if (arr === null) return 0;
+//     let sum = arr.reduce(function(total, currentValue){
+//         return currentValue > 0 ? total + currentValue : total;
+//     }, 0);
+//     return sum;
+// }
+
+let positiveSum = (arr) => arr.reduce((result, value) => ((value >0 ? value : 0) + result), 0);
 
 console.log(positiveSum([]));
 console.log(positiveSum([1,2,3,4,5]));
