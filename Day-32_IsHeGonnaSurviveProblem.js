@@ -21,10 +21,13 @@ describe('Fixed tests', function() {
 });
  */
 
-function hero(bullets, dragons){
-    //Get Coding!
-    return bullets >= (2 * dragons)
-}
+// function hero(bullets, dragons){
+//     //Get Coding!
+//     return bullets >= (2 * dragons)
+// }
+
+let hero = (bullets, dragons) => bullets/dragons >=2;
+
 console.log(hero(10,5))
 console.log(hero(7,4))
 console.log(hero(4,5))
