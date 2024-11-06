@@ -24,14 +24,16 @@ describe("Basic tests", () => {
   })
  */
 
-function DNAtoRNA(dna) {
-    // create a function which returns an RNA sequence from the given DNA sequence
-    if (dna.includes('T')) {
-        return dna.replace(/T/g, "U");
-    }else{
-        return dna;
-    }
-}
+// function DNAtoRNA(dna) {
+//     // create a function which returns an RNA sequence from the given DNA sequence
+//     if (dna.includes('T')) {
+//         return dna.replace(/T/g, "U");
+//     }else{
+//         return dna;
+//     }
+// }
+
+let DNAtoRNA = (dna) => dna.replace(/T/g,"U");
 
 console.log(DNAtoRNA("TTTT"))
 console.log(DNAtoRNA("GCAT"))
