@@ -146,12 +146,11 @@ function SubtractSum(n){
         const sumOfN = n.toString().split('').map(Number).reduce((a, b) => (a + b), 0);
         n = n - sumOfN;
     
-        if (n < 100) {
-            return fruits[n - 1];
-        }
+        if (n < 100) return fruits[n - 1 < 0 ? 0 : n - 1];
+        
     
         return SubtractSum(n);
        
 }
-console.log(SubtractSum(20))
+console.log(SubtractSum(3))
 
