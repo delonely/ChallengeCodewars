@@ -92,8 +92,9 @@ saturday = [5448, 8041, 6573, 8104, 6208, 5912, 7927, 8909, 7000, 5059, 6412, 63
 let stairs = [sunday,monday,tuesday,wednesday,thursday,friday,saturday ]
 
 //try 2 liner
-function stairsIn20(s){
-    return s.reduce((a,b) => a.concat(b)).reduce((a,b) => a + b) * 20;
-}
+// function stairsIn20(s){
+//     return s.reduce((a,b) => a.concat(b)).reduce((a,b) => a + b) * 20;
+// }
 
+let stairsIn20 = (s) => s.flat().reduce((sum, currentValue)=>sum+currentValue,0) * 20;
 console.log(stairsIn20(stairs))
