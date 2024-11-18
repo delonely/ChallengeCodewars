@@ -28,9 +28,11 @@ describe("Sample Tests", () => {
 });
  */
 
-function shortcut (string) {
-    const removedVowel = string.replace(/[aiueo]/gi, "");
-    return removedVowel;
-}
+// function shortcut (string) {
+//     const removedVowel = string.replace(/[aiueo]/gi, "");
+//     return removedVowel;
+// }
 
-console.log(string('hello'));
+let shortcut = (string) => string.replace(/[aiueo]/gi, "");
+
+console.log(shortcut('hello'));
