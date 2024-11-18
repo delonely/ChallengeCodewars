@@ -22,14 +22,18 @@ describe("Basic Tests",function(){
 });
  */
 
-function countBy(x, n) {
-    let z = [];
+// function countBy(x, n) {
+//     let z = [];
   
-    for(let i = 1; i <= n; i++){
-        z.push(x * i);
-    }   
+//     for(let i = 1; i <= n; i++){
+//         z.push(x * i);
+//     }   
 
-    return z;
+//     return z;
+// }
+
+function countBy(x, n) {
+  // Use Array.from with a mapping function
+  return Array.from({length: n}, (_, i) => x * (i + 1));
 }
-
 console.log(countBy(2,5))
