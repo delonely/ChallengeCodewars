@@ -33,4 +33,4 @@ function shortcut (string) {
     return removedVowel;
 }
 
-console.log(string('hello'));
+console.log(shortcut('hello'));
